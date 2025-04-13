@@ -1,7 +1,7 @@
 import { preferences } from '@kit.ArkData'
 import { Context } from '@ohos.abilityAccessCtrl';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { Util_log } from '../Log/Log';
+import { Util_log } from '../../util/Log/Log';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 let options: preferences.Options = { name: 'myStore' };
