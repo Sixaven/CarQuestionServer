@@ -1,6 +1,6 @@
 {
   "src": [
-    "View/pages/LauncherPage",
-    "View/pages/main"
+    "View/LauncherPage",
+    "pages/Main"
   ]
 }

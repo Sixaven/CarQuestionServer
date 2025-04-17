@@ -1,4 +1,4 @@
-import {launcher_string} from '../../common/string/String'
+import {launcher_string} from '../common/string/String'
 import { preferences } from '@kit.ArkData'
 
 let dataPreferences: preferences.Preferences | null = null;

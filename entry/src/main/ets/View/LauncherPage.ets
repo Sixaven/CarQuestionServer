@@ -1,8 +1,8 @@
-import { Util_log } from '../../util/Log/Log';
-import preUtil from '../../Model/DataSoures/Preferences'
+import { Util_log } from '../util/Log/Log';
+import preUtil from '../Model/PreferSoures/Preferences'
 import { BusinessError } from '@kit.BasicServicesKit';
 import { router } from '@kit.ArkUI';
-import launcher_Dialog from '../CustomDiag//launcher_Dialog'
+import launcher_Dialog from './launcher_Dialog'
 import { common } from '@kit.AbilityKit';
 
 @Entry
@@ -73,7 +73,7 @@ struct Index {
   jumpToMain(){
     this.isJumpToAdvertising = true;
     router.pushUrl({
-      url:"View/pages/main"
+      url:"pages/Main"
     }).catch((err: BusinessError) => {
       Util_log.util_log('跳转main失败'+'err:'+JSON.stringify(err))
     })
@@ -94,7 +94,7 @@ struct Index {
          .objectFit(ImageFit.Fill)
 
        Button(`跳过${this.countDown}S`)
-         .margin({top:18,right:10})
+         .margin({top:35,right:15})
          .backgroundColor(Color.Grey)
          .onClick(() => {
            this.jumpToMain()
