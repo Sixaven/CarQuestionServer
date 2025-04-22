@@ -1,4 +1,8 @@
-import person from '../View/PersonPage';
+import person from './PersonPage';
+import SearchView from '../View/SearchView'
+import WaterFlowComponent from '../View/WaterFlowComponent'
+import SwiperView from '../View/SwiperView';
+import Find from './Find';
 
 @Entry
 @Component
@@ -21,7 +25,7 @@ struct main {
     Column(){
       Tabs({
         barPosition:BarPosition.End,
-
+        index:1
       }){
         TabContent(){
           Text('shouye')
@@ -29,9 +33,10 @@ struct main {
         .tabBar(this.tabBuilder('首页',0,$r('app.media.sy')))
 
         TabContent(){
-          Text('faxian')
+          Find()
         }
         .tabBar(this.tabBuilder('发现',1,$r('app.media.fx')))
+
         TabContent(){
           person()
         }
