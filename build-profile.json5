@@ -1,6 +1,20 @@
 {
   "app": {
-    "signingConfigs": [],
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\Lenovo\\.ohos\\config\\default_CarServer_AoRQFxJ5xIha4LPBRbQBEX_R1PQG0StL47CbXLy9Gzc=.cer",
+          "storePassword": "0000001BF048E683BCA5464A071416DA12CC18725D580DB76DFACD070D098DADE25122E7391B6BAA1673B6",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B1B178DD50EE1373536ACC73D466B6375DA23B90A511A22F6A02898CBD124A5AC119C393D378B81",
+          "profile": "C:\\Users\\Lenovo\\.ohos\\config\\default_CarServer_AoRQFxJ5xIha4LPBRbQBEX_R1PQG0StL47CbXLy9Gzc=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\Lenovo\\.ohos\\config\\default_CarServer_AoRQFxJ5xIha4LPBRbQBEX_R1PQG0StL47CbXLy9Gzc=.p12"
+        }
+      }
+    ],
     "products": [
       {
         "name": "default",

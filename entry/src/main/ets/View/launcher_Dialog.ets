@@ -53,6 +53,3 @@ export default struct launcher_Dialog {
   }
 }
 
-@Extend(Text) function role(){
-  .fontSize(20)
-}

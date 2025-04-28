@@ -20,6 +20,5 @@ export default struct SwiperView {
       top:12,
       bottom:12
     })
-    .padding({right:12,left:12})
   }
 }

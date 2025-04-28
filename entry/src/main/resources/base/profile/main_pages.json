@@ -1,6 +1,7 @@
 {
   "src": [
     "View/LauncherPage",
-    "pages/Main"
+    "pages/Main",
+    "pages/test"
   ]
 }

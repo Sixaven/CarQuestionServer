@@ -23,6 +23,7 @@ struct Index {
   })
 
   onConfirm(){
+    this.dialogController.close()
     this.savePrivacy();
     this.jumpToMain()
   }

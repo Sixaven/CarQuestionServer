@@ -1,56 +1,17 @@
+import { common } from '@kit.AbilityKit'
+
 @Entry
 @Component
 struct test {
+  private context = getContext() as common.UIAbilityContext
   build() {
-
-    WaterFlow(){
-      FlowItem(){
-        Text().width(100).height(100)
-          .backgroundColor(Color.Pink)
-      }
-      FlowItem(){
-        Text().width(100).height(100)
-          .backgroundColor(Color.Pink)
-      }
-      FlowItem(){
-        Text().width(100).height(100)
-          .backgroundColor(Color.Pink)
-      }
-      FlowItem(){
-        Text().width(100).height(100)
-          .backgroundColor(Color.Pink)
-      }
-      FlowItem(){
-        Text().width(100).height(100)
-          .backgroundColor(Color.Pink)
-      }
-      FlowItem(){
-        Text().width(100).height(100)
-          .backgroundColor(Color.Pink)
-      }
-      FlowItem(){
-        Text().width(100).height(100)
-          .backgroundColor(Color.Pink)
-      }
-      FlowItem(){
-        Text().width(100).height(100)
-          .backgroundColor(Color.Pink)
-      }
-      FlowItem(){
-        Text().width(100).height(100)
-          .backgroundColor(Color.Pink)
-      }
-
-
+    Column(){
+      Button('点击')
+        .margin(30)
+        .onClick(() => {
+          this.context.eventHub.emit('event1','李妙妙是大美女')
+        })
     }
-    .width('100%')
-    .columnsTemplate('1fr 1fr')
-    .columnsGap(6)
-    .rowsGap(6)
-    .padding({
-      left: 42,
-      right: 12,
-      bottom:12
-    })
+    .width(300)
   }
 }

@@ -1,17 +1,11 @@
-import UserItem from '../Model/WaterFlowSouces/WaterFlowData'
-import {WaterFlowViewModel} from '../ViewModel/WaterFlowViewModel'
-import {waterFlowData} from '../ViewModel/DataViewModel'
-import FlowItemComponent from '../View/FlowItemComponent'
+import UserItem from '../../Model/WaterFlowSouces/WaterFlowData'
+import {WaterFlowViewModel} from '../../ViewModel/WaterFlowViewModel'
+import {waterFlowData} from '../../ViewModel/DataViewModel'
+import FlowItemComponent from './FlowItemComponent'
 @Component
 export default struct WaterFlowComponent {
   private dataSource: WaterFlowViewModel = new WaterFlowViewModel()
-  private dataHeight: number[] = []
-  setHeight(){
-    for(let i =0 ;i<this.dataSource.totalCount();i++){
 
-      this.dataHeight.push()
-    }
-  }
   aboutToAppear(): void {
     this.dataSource.setDataArray(waterFlowData);
   }
@@ -23,13 +17,12 @@ export default struct WaterFlowComponent {
         }
       },(item: UserItem) => JSON.stringify(item))
     }
-    .columnsTemplate('1fr 1fr')
-    .columnsGap(10)
-    .rowsGap(8)
     .layoutDirection(FlexDirection.Column)
+    .columnsTemplate('1fr 1fr')
+    .columnsGap(8)
+    .rowsGap(8)
     .layoutWeight(1)
-    .padding({left:20})
-    .height(400)
+    //.height('58%')
   }
 
   @Builder

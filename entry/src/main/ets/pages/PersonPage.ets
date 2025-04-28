@@ -1,5 +1,8 @@
 import { it } from '@ohos/hypium'
+import { NotificationItem_text } from '../Model/NotificationSource/NotificationItem'
+import { NotificationSource } from '../Model/NotificationSource/NotificationSource'
 import PersonItemData from '../Model/PersonSources/PersonSoures'
+import { Util_log } from '../util/Log/Log'
 import PersonViewModel from '../ViewModel/PersonViewModel'
 @Preview
 @Component
@@ -7,7 +10,7 @@ export default struct person {
   @State userName: string = '李妙妙'
   @State userEmail: string = '2985855672@qq.com'
   @State buttonState: string = '退出登录'
-
+  @State toggleState: boolean = false
   @Builder personCell(item: PersonItemData){
     Row(){
       Row({space:3}){
@@ -24,7 +27,20 @@ export default struct person {
           .width(12)
           .height(24)
       }else{
-        Toggle({type: ToggleType.Switch,isOn: false})
+        Toggle({type: ToggleType.Switch,isOn: this.toggleState})
+          .onChange(() => {
+            this.toggleState = !this.toggleState;
+            if(this.toggleState){
+              NotificationSource.checkEnable()
+              let a: NotificationItem_text = {
+                id: 1,
+                title : '我是标题',
+                text: '我是正文',
+                additionalText: '我是附加内容'
+              }
+              NotificationSource.publishText(a)
+            }
+          })
       }
     }
     .justifyContent(FlexAlign.SpaceBetween)

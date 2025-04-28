@@ -1,5 +1,5 @@
-import UserItem from '../Model/WaterFlowSouces/WaterFlowData';
-import { waterFlowData } from '../ViewModel/DataViewModel';
+import UserItem from '../../Model/WaterFlowSouces/WaterFlowData';
+import { waterFlowData } from '../../ViewModel/DataViewModel';
 
 @Component
 export default struct FlowItemComponent {
@@ -9,20 +9,18 @@ export default struct FlowItemComponent {
       Column({space:5}){
         Image(this.item.image)
           .width(132)
-          .height(110)
           .objectFit(ImageFit.Contain)
           .borderRadius({
             topLeft:10,
             topRight:10
           })
+          //.margin({top:12,bottom:8})
         Text(this.item.text)
           .fontSize(12)
-          //.height(16)
           .fontWeight(FontWeight.Normal)
           .lineHeight(0)
           .maxLines(3)
           .textOverflow({overflow:TextOverflow.Ellipsis})
-          .width(132)
       }
       Row(){
         Image(this.item.image_head)
@@ -41,11 +39,14 @@ export default struct FlowItemComponent {
             .fontSize(8)
         }
       }
-      .width(132)
+      .width('100%')
       .justifyContent(FlexAlign.SpaceBetween)
     }
-    .padding(10)
-
+    .padding({
+      left:12,
+      right:12,
+      bottom:12
+    })
     .backgroundColor('#fff')
     .borderRadius(10)
   }

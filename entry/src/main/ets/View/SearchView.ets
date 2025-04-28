@@ -12,7 +12,7 @@
     }
     .width('100%')
     .padding(10)
-    .margin({top:10,bottom:10})
+    .margin({top:30,bottom:10})
     .height(50)
     .backgroundColor('#fff')
   }

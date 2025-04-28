@@ -1,8 +1,9 @@
 import person from './PersonPage';
 import SearchView from '../View/SearchView'
-import WaterFlowComponent from '../View/WaterFlowComponent'
+import WaterFlowComponent from '../View/WaterFlowView/WaterFlowComponent'
 import SwiperView from '../View/SwiperView';
 import Find from './Find';
+import Home from './Home';
 
 @Entry
 @Component
@@ -17,6 +18,11 @@ struct main {
         .fontSize(12)
         .fontColor(this.currentIndex === index? '#1698CE':'#6B6B6B')
     }
+    .border({
+      width:{top:1},
+      color:'#ffeeebeb'
+    })
+
     .width('100%')
     .justifyContent(FlexAlign.Center)
 
@@ -25,10 +31,10 @@ struct main {
     Column(){
       Tabs({
         barPosition:BarPosition.End,
-        index:1
+        index:0
       }){
         TabContent(){
-          Text('shouye')
+          Home()
         }
         .tabBar(this.tabBuilder('首页',0,$r('app.media.sy')))
 
