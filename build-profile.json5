@@ -6,12 +6,24 @@
         "type": "HarmonyOS",
         "material": {
           "certpath": "C:\\Users\\Lenovo\\.ohos\\config\\default_CarServer_AoRQFxJ5xIha4LPBRbQBEX_R1PQG0StL47CbXLy9Gzc=.cer",
-          "storePassword": "0000001BF048E683BCA5464A071416DA12CC18725D580DB76DFACD070D098DADE25122E7391B6BAA1673B6",
+          "storePassword": "0000001BE66A4382FDF418F0E59783A435ED9FA24B85CDAEA1E5A7BD5CD74E11F4758CA15C3C5DF057A49F",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001B1B178DD50EE1373536ACC73D466B6375DA23B90A511A22F6A02898CBD124A5AC119C393D378B81",
+          "keyPassword": "0000001B33B4BA7AEC61D6E15D2AD408D39B3F7CD61BBBA50B978BACC5F87B5AD59B8B13372B4DD66A28AE",
           "profile": "C:\\Users\\Lenovo\\.ohos\\config\\default_CarServer_AoRQFxJ5xIha4LPBRbQBEX_R1PQG0StL47CbXLy9Gzc=.p7b",
           "signAlg": "SHA256withECDSA",
           "storeFile": "C:\\Users\\Lenovo\\.ohos\\config\\default_CarServer_AoRQFxJ5xIha4LPBRbQBEX_R1PQG0StL47CbXLy9Gzc=.p12"
+        }
+      },
+      {
+        "name": "Release",
+        "material": {
+          "certpath": "F:/下载/CarServer_Debug.cer",
+          "storePassword": "000000186380601A1D0CB32BC39D87940B5C494BC563E885151C934AD1A6ADBEEA504775B9F76139",
+          "keyAlias": "CarServer_key",
+          "keyPassword": "00000018D6DA1024B97B3D9B807906BA32E90195457552966FB8B03250D6A67F2B7D28FCFBDAF4E7",
+          "profile": "F:/下载/CarServer_testRelease.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:/Users/Lenovo/HAP_key/key_CarServer.p12"
         }
       }
     ],

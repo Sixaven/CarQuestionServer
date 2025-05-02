@@ -5,7 +5,6 @@ import prompt from '@ohos.promptAction';
 import MessageListItem from '../ViewModel/MessageListItem';
 import { Util_log } from '../util/Log/Log';
 
-
 @Component
 export default struct Home {
   @State account: AccountData[] = []
@@ -16,7 +15,6 @@ export default struct Home {
     this.AccountTable.getRdbStore(() => {
       this.AccountTable.query(0,(result: AccountData[]) => {
         this.account = result;
-        Util_log.util_log(this.account.length+'1111')
       },true)
     })
   }
@@ -32,7 +30,7 @@ export default struct Home {
       .width('100%')
       .justifyContent(FlexAlign.Center)
 
-      List(){
+      List({space:12}){
         if(this.account.length == 0){
           ListItem(){
             Column({space:8}){
@@ -52,13 +50,12 @@ export default struct Home {
             ListItem(){
               MessageListItem({message:item})
             }
-            .height(50)
           },(item: AccountData) => JSON.stringify(item))
         }
       }
-
       .layoutWeight(1)
       .scrollBar(BarState.Off)
+      //Blank()
       Row(){
         TextInput({placeholder:'给智行知发送消息'})
           .layoutWeight(1)

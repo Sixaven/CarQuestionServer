@@ -43,6 +43,10 @@ export class NotificationSource{
           text: item.text,
           additionalText: item.additionalText
         }
+      },
+      template:{
+        name:'downloadTemplate',
+        data:{title: '我是标题——data',fileName: '我是文件名称',progressValue: 45}
       }
     }
     //notificationManager.addSlot(notificationManager.SlotType.SOCIAL_COMMUNICATION);
@@ -56,3 +60,5 @@ export class NotificationSource{
     })
   }
 }
+
+
