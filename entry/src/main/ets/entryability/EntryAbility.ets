@@ -1,6 +1,6 @@
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { window } from '@kit.ArkUI';
+import { KeyboardAvoidMode, window } from '@kit.ArkUI';
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
@@ -24,21 +24,19 @@ export default class EntryAbility extends UIAbility {
     // Main window is created, set main page for this ability
     let Start = 'pages/Main'//'View/LauncherPage'
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-
     windowStage.loadContent(Start, (err) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
       }
+      //let keyboardAvoidMode = windowStage.getMainWindowSync().getUIContext().getKeyboardAvoidMode();
+
+      windowStage.getMainWindowSync().getUIContext().setKeyboardAvoidMode(KeyboardAvoidMode.OFFSET)
+      windowStage.getMainWindowSync().setWindowLayoutFullScreen(true)
+
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');
     });
 
-    windowStage.getMainWindow()
-      .then((data) => {
-        const windowClass = data;
-        windowClass.setWindowLayoutFullScreen(true);
-
-      })
   }
 
   onWindowStageDestroy(): void {

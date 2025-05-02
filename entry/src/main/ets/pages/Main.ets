@@ -22,13 +22,14 @@ struct main {
       width:{top:1},
       color:'#ffeeebeb'
     })
-
+    .padding(10)
+    .height(56)
     .width('100%')
+    .expandSafeArea([SafeAreaType.KEYBOARD])
     .justifyContent(FlexAlign.Center)
-
   }
   build() {
-    Column(){
+    Stack(){
       Tabs({
         barPosition:BarPosition.End,
         index:0
@@ -51,6 +52,7 @@ struct main {
       }
       .width('100%')
       .height('100%')
+      .barMode(BarMode.Fixed)
       .scrollable(false)
       .onChange((index:number) => {
         this.currentIndex = index;
